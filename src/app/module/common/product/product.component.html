@@ -1,0 +1,12 @@
+<div class="w-100 product">
+<div class="card">
+    <img [src]="'data:image/webp;base64,'+product.prodImage" alt="Denim Jeans">
+    <h2 [innerHtml]="product.prodName"></h2>
+    <p class="price bold" [innerHtml]="product.prodPrice"></p>
+    <p class="text-truncate" [innerHtml]="product.prodDesc"></p>
+    <p><button (click)="addToCart(product.prodId)">Add to Cart</button></p>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,75 @@
+.header
+{
+    height: 60px;
+    background-color: #ffffff;
+}
+.logo
+{
+    height: 60px;
+}
+.logo img{
+    height: 60px;
+    width: 100%;
+    border-radius: 50% 50%;
+}
+.margin-top
+{
+    margin-top: 0.8%;
+}
+.sign-in-btn .button{
+    width: 100%;
+}
+.cart div{
+    height: 40px;
+    width: 40px;
+    background-image: url('src/assets/icon/cart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.cart span{
+    position: absolute;
+    transform: translate(150%,-150%);
+}
+.main-body{
+    min-height: 100vh;
+    height: 100%;
+    max-height: auto;
+    margin-top: 5rem;
+}
+ .main-body .left-menu{
+    margin-top: 1rem;  
+}
+
+.main-body .products{
+    padding:2% 2%;
+}
+.main-body .products>div{
+    display: inline-block;
+    width: 33.2%;
+    padding: 1rem;
+}
+.main-body .ads{
+    padding:2% 0%;
+}
+.footer
+{
+    color: white;
+    background-color: black;
+    height: 60px;
+}
+.left-menu li .cat_name{
+    width:100%;
+}
+.left-menu li .material-symbols-outlined{
+    float: right;
+    color: black;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.ads .ad img
+{
+    width: 100%;
+    margin-bottom: 15px;
+}

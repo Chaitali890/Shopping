@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row header fixed-top">
+       <div class="col-1 logo">
+        <img src="assets/icon/logo.png">
+       </div>
+       <div class="col-7 margin-top">
+        <input type="text" [(ngModel)]="searchText" placeholder="Enter Category name and Product name here" class="form-control">
+       </div>
+       <div class="col-2 sign-in-btn margin-top">
+        <a href="/signin" class="btn btn-primary button">Sign In</a>
+       </div>
+       <div class="col-2 cart margin-top">
+        <div></div>
+        <span class="badge bg-danger">{{cartCount}}</span>
+       </div>
+    </div>
+
+    <div class="row main-body">
+
+        <div class="col-2 left-menu">
+            <ul class="list-group" *ngFor="let mainCat of maincategories; let i=index">
+                <li class="list-group-item cursor-pointer" (click)="changeArrow(mainCat)" data-bs-toggle="collapse" [attr.data-bs-target]="'#category'+i">
+                    <span class="text-truncate cat_name" [innerHtml]="mainCat.mainCatName"></span>
+                    <span class="badge material-symbols-outlined">{{(mainCat.isCollapse===true)? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</span>
+                   </li>
+                   <ul class="list-group collapse hide" [id]="'category'+i" *ngFor="let cat of mainCat.categoryList;let j=index">
+                    <li class="list-group-item cursor-pointer list-group-item-success" (click)="changeCatArrow(cat)" data-bs-toggle="collapse" [attr.data-bs-target]="'#subcategory'+j">
+                        <span class="cat_name" [innerHtml]="cat.catName"></span>
+                        <span class="badge material-symbols-outlined">{{(cat.isCollapse===true)? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</span>
+                       </li>
+                       <ul [class]=" cat.cssClass" *ngFor="let subcat of cat.subCatList">
+                        <li class="list-group-item cursor-pointer list-group-item-secondary" [id]="'subcategory'+j">
+                            <span class="cat_name" [innerHtml]="subcat.subCatName"></span>
+                        </li>
+                       </ul>
+                </ul>
+            </ul>
+        </div>
+
+
+
+        <div class="col-8 products">
+            <div *ngFor="let product of products | randomObject | filter : searchText">
+                <app-product [product]="product" (cartCount)="setCartCount($event)"></app-product>
+            </div>
+        </div>
+
+        <div class="col-2 ads">
+        <div class="ad"><img src="./assets/icon/banner2.jpg"></div>
+        <div class="ad"><img src="./assets/icon/banner.jpg"></div>
+        <div class="ad"><img src="./assets/icon/banner6.jpg"></div>
+    </div>
+    </div>
+
+    <div class="row footer">
+        <div class="text-center m-2"><strong>@CopyRights All rights reserved</strong></div>
+    </div>
+
+
+</div>

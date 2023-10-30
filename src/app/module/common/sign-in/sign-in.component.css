@@ -1,0 +1,10 @@
+.sign-in{
+    margin: 5% 10%;
+    width: 50%;
+    padding: 2% 2%;
+    background-color: rgb(143, 231, 231);
+    border: thin solid rgb(79, 214, 231);
+}
+.control{
+    margin: 5% 0%;
+}
